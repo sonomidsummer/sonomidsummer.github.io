@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="refresh" content="6;url=https://www.baidu.com/">
+	<!-- <meta http-equiv="refresh" content="6;url=https://www.bilibili.com/"> -->
     <title>Hello</title>
 </head>
 <body>
-    <h1 id="time">Redirect in 5</h1>
+    <h1 id="time">Loading...</h1>
 <script>
-    var int=setInterval("countDown()",1000);
+    var i=setInterval("countDown()",1000);
     var s=5;
     function countDown(){
-        s>0 ? s-- : clearInterval(int);
-        document.getElementById("time").innerHTML="Redirect in "+s;
-        if(s==0){
+        if(s>0){
+            document.getElementById("time").innerHTML="Redirect in "+s;
+            s--;
+        }else{
+            clearInterval(i);
             document.getElementById("time").innerHTML="Redirecting...";
+            window.location.href="https://www.bilibili.com/";
         }
     }
 </script>
